@@ -1,0 +1,52 @@
+﻿Workorders Addon for FusionInvoice
+----------------------------------
+Installation or Update:
+Initial Installation or update from Workorders v2.0.1 and later:
+1.) Unzip "workorders_fusioninvoice_v2_0_1.tar.gz" to temporary directory
+2.) Upload the unzipped files and directories to your FusionInvoice web folder, keeping the directory structure.
+3.) Change permissions as necessary for your website setup.
+4.) In FusionInvoice:
+For Initial Install:
+Select System (gear icon) Addons.
+Select Install button next to Workorders Addon.
+To Update:
+Select System (gear icon) Addons.
+Select Update button next to Workorders Addon.
+Update from Workorders v2.0.0 or earlier:
+1.) Delete the <FusionInvoice>/custom/addons/Workorders directory in your FusionInvoice web server directory.
+2.) Unzip "workorders_fusioninvoice_v2_0_1.tar.gz" to temporary directory
+3.) Upload the unzipped files and directories to your FusionInvoice web folder, keeping the directory structure.
+4.) Change permissions as necessary for your website setup.
+5.) In FusionInvoice:
+Select System (gear icon) Addons.
+Select Update button next to Workorders Addon.
+** Settings **
+FusionInvoice System menu - Settings - Dashboard:
+Enable workorder summary widget
+Set display order = 1, column width = 6
+Set invoice display order = 2, quote display order = 3
+If using Batch print and wkhtmltopdf is installed:
+PDF - driver = wkhtmltopdf - Binary = {binary location} usually /usr/local/bin/wkhtmltopdf or /usr/bin/wkhtmltopdf.
+Workorders menu - Utilities - Settings
+Set default template to Workordercustom.blade.php
+Set default group to Workorder Default
+Set Your terms and footer as required.
+If running the Scheduler Addon for FusionInvoice:
+Set Push job info to Scheduler Addon to "Yes"
+Workorders -> Employees and Workorders -> Resources
+Add an employee and a resource to fire the trigger to populate item_lookups.
+
+NOTE: Occasionally there may be a conflict with old views in the Laravel cache.
+If you receive an odd error on page load after install try and clear the cache by:
+(in browser address bar:)
+http://<YourFusionInvoice>/workorders/viewclear
+Under some upgrade circumstances, you may also get an error of some database table
+not defined. This is most likely do to the fact that the addon migration has not been run yet.
+To run the migration:
+(in browser address bar:)
+http://<YourFusionInvoice>/addons
+This should take you to the FusionInvoice addon page where you can "Complete Upgrade".
+
+That should do it !
+Description of functions is available in Workorders -> Utilities -> About
+
